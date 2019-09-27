@@ -76,10 +76,10 @@ int main()
 //            cin>> arr[i];
     init(1, 1, n);
 
-    update(1, 1, n, 2,4, 2);
+    update(1, 1, n, 2, 4, 2);
     cout << query(1, 1, n, 1, 3) << endl;
 
-    update(1, 1, n, 2,4, -2);
+    update(1, 1, n, 2, 4, -2);
     cout << query(1, 1, n, 1, 2) << endl;
 
     // cerr<<"Time : "<<(double)clock()/(double)CLOCKS_PER_SEC<<"s\n";

@@ -10,7 +10,7 @@
 #define vint vector<int>
 #define vstr vector<string>
 #define MX 10e7
-#define mx 100001
+#define mx 100000000
 #define pb push_back
 #define SS stringstream
 #define HI printf("HI ");
@@ -53,8 +53,8 @@ int binaryCal(int dn) { if (dn == 0) return 0; else return (dn % 2 + 10 * binary
 bool Check(int N,int pos){return (bool)(N & (1<<pos));}
 int Set(int N,int pos){	return N=N | (1<<pos);}
 
-int cnt = 1;
-long long N = 100000;
+int prime[ mx ], k = 0;
+long long N = 10e7;
 int status[(mx/32)+2];
 void sieve()
 {
@@ -71,15 +71,22 @@ void sieve()
 		 }
 	 }
 
-	 //puts("2");
-	 for(i=3;i<=N;i+=2)
-	 if( Check(status[i>>5],i&31)==0) cnt++;
-	 	// printf("%d\n",i);
-	 	cout << cnt << endl;
+	 prime[ k++ ] = 2;
+	 for( i = 3; i <= N; i += 2)
+        if( Check( status[ i >> 5 ], i & 31 ) == 0 ){
+            prime[ k++ ] = i;
+        }
 }
 int main()
 {
     sieve();
+    int n;
+    cin >> n;
+    f1(i, n){
+        int k;
+        cin >> k;
+        cout << prime[ k - 1 ] <<"\t";
+    }
     return 0;
 }
 
